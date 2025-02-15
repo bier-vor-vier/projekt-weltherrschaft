@@ -794,6 +794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/css-modules@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@types/css-modules@npm:1.0.5"
+  checksum: 56ee69ec66b726765c6b4a57e0b58665341919267cbe380f9320379e84402a17afacc13228ea1271e1ce2f049465240d553d7bfa236b1f0b87c26c561f9eb875
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:1.0.6, @types/estree@npm:^1.0.6":
   version: 1.0.6
   resolution: "@types/estree@npm:1.0.6"
@@ -1029,6 +1036,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.20.0"
     "@tailwindcss/vite": "npm:^4.0.6"
+    "@types/css-modules": "npm:^1.0.5"
     "@types/react": "npm:^19.0.8"
     "@types/react-dom": "npm:^19.0.3"
     "@vitejs/plugin-react-swc": "npm:^3.8.0"

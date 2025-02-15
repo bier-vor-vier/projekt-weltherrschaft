@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "kubernetes": "deploy.yml",
+        "https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json": ".gitlab-ci*.yml",
+        "https://json.schemastore.org/github-workflow.json": "file:///workspaces/projekt-weltherrschaft/app/.github/github-actions.yml"
+    }
+}
