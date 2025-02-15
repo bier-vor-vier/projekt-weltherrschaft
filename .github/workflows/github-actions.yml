@@ -10,4 +10,6 @@ jobs:
           node-version: 22.x
       - run: npm install -g yarn
       - run: yarn install
+        working-directory: app
       - run: yarn run build
+        working-directory: app
