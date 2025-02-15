@@ -2,7 +2,6 @@ name: Weltherrschaft
 on: [push]
 jobs:
   frontend:
-    name: frontend
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,3 +17,5 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist
+      - name: deploy pages
+        uses: actions/deploy-pages@v4
