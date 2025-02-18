@@ -6,22 +6,26 @@ interface CounterState {
 
 const initialState: CounterState = {
     value: 0,
+}
+
+const incrementReducer = (state: CounterState) => {
+    state.value += 1;
+};
+
+const decrementReducer = (state: CounterState) => {
+    state.value -= 1;
+};
+const setCountReducer = (state: CounterState, action: PayloadAction<number>) => {
+    state.value = action.payload;
 };
 
 const counterSlice = createSlice({
     name: 'counter',
-
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
-        },
-        decrement: (state) => {
-            state.value -= 1;
-        },
-        setCount: (state, action: PayloadAction<number>) => {
-            state.value = action.payload;
-        },
+        increment: incrementReducer,
+        decrement: decrementReducer,
+        setCount: setCountReducer,
     },
 });
 
