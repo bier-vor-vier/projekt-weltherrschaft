@@ -1,5 +1,7 @@
-import { useState } from 'react';
 import './App.css';
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "./store/root.ts";
+import {decrement, increment, setCount} from "./store/features/counter.ts";
 
 
 const button = "rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white";
@@ -54,7 +56,9 @@ const Nav = () => {
 }
 
 const App = () => {
-    const [count, setCount] = useState(0)
+
+    const count = useSelector((state: RootState) => state.counter.value);
+    const dispatch = useDispatch<AppDispatch>();
 
     return (
         <>
@@ -70,16 +74,20 @@ const App = () => {
             <main>
                 <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 
-
                     <h1>Count {count}</h1>
-                    <button className={button} onClick={() => setCount(count - 1)}>
+
+                    <div className="flex gap-2">
+
+                    <button className={button} onClick={() => dispatch(decrement())}>
                         -
                     </button>
-                    &nbsp;
-                    <button className={button} onClick={() => setCount(count + 1)}>
+                    <button className={button} onClick={() => dispatch(increment())}>
                         +
                     </button>
-
+                    <button className={button} onClick={() => dispatch(setCount(0))}>
+                        Reset
+                    </button>
+                    </div>
                 </div>
             </main>
         </>
